@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Log Stream</title>
+    <style>
+        body {
+            background: black;
+            color: green;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="logStream"></div>
+    <script type="text/javascript">
+        const logStream = document.getElementById("logStream");
+
+        const wsDomain = "<%= wsDomain %>";
+        const wsPort = "<%= wsPort %>";
+        const webSocket = new WebSocket("ws://" + wsDomain + ":" + wsPort);
+
+        const clientId = crypto.randomUUID();
+
+        webSocket.onopen = function () {
+            addLine("Connected");
+            webSocket.send("Client " + clientId + " connected");
+        }
+
+        webSocket.onmessage = function (event) {
+            addLine("Received: " + event.data);
+        }
+
+        function addLine(text) {
+            let line = document.createElement("p");
+            line.innerText = text;
+            logStream.prepend(line);
+        }
+    </script>
+</body>
+
+</html>

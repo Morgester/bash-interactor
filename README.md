@@ -1,2 +1,9 @@
-# Bash Interactor
-A solution to allow you to interact with a Unix shell (Bash) bidirectionally using a web page - run commands &amp; scripts, and receive their output back.
+# Prerequestites
+- [Node.js](https://nodejs.org/)
+- [npm.js](https://www.npmjs.com/)
+
+# Install
+'npm install'
+
+# Run
+'npm start'
