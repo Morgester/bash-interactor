@@ -3,7 +3,8 @@
 - [npm.js](https://www.npmjs.com/)
 
 # Install
-'npm install'
+- 'npm install'
 
 # Run
-'npm start'
+- 'npm start'
+- http://localhost:8442/
